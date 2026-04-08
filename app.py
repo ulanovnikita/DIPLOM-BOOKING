@@ -46,7 +46,15 @@ if user_email and user_password:
 if access_granted:
     st.title("🏢 Система бронирования рабочих пространств")
     
-    menu = ["📍 Забронировать", "📅 Мои бронирования", "🛡️ Журнал аудита"]
+   # Базовое меню для обычных пользователей
+    menu = ["📍 Забронировать", "📅 Мои бронирования"]
+    
+    # ПРОВЕРКА НА АДМИНИСТРАТОРА
+    # 
+    if user_email == "ulanovadmin@gmail.com":
+        menu.append("🛡️ Журнал аудита")
+        st.sidebar.success("👑 Вы вошли как Администратор")
+
     choice = st.sidebar.selectbox("Навигация", menu)
 
     if choice == "📍 Забронировать":
