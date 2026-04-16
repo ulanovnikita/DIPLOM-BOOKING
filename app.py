@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from supabase import create_client, Client
 from datetime import datetime
-st.set_page_config(page_title="Система бронирования", layout="wide") # Желательно добавить wide layout
+st.set_page_config(page_title="Система бронирования", layout="wide")
 
 st.markdown("""
     <style>
