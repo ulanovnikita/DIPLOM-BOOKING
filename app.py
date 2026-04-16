@@ -109,7 +109,7 @@ if access_granted:
                 else:
                     # Запись брони
                     supabase.table("bookings").insert({"room_id": room_id, "user_email": user_email, "start_time": start_dt, "end_time": end_dt}).execute()
-                    # Запись в аудит (ДЛЯ ПУНКТА 3.2)
+                    # Запись в аудит 
                     supabase.table("audit_logs").insert({"user_email": user_email, "action": f"Бронь: {selected_room} на {date}"}).execute()
                     st.success("🎉 Успешно забронировано!")
 
@@ -138,7 +138,7 @@ if access_granted:
             st.dataframe(df_logs, use_container_width=True)
             
             # ЭКСПОРТ (ДЛЯ ПУНКТА 3.2)
-            csv = df_logs.to_csv(index=False).encode('utf-8')
+            csv = df_logs.to_csv(index=False).encode('utf-8-sig')
             st.download_button(
                 label="📥 Скачать отчет аудита (CSV)",
                 data=csv,
