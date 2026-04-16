@@ -18,15 +18,14 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- 1. НАСТРОЙКИ ПОДКЛЮЧЕНИЯ ---
-# ВСТАВЬ СВОИ ДАННЫЕ ТУТ:
+
 URL = "https://ufmtkugrcxafegopaqql.supabase.co"
 KEY = "sb_publishable_4lYFZSz4hxEHX51CHC0fzQ_jqDT-hIK"
 supabase: Client = create_client(URL, KEY)
 
 st.set_page_config(page_title="Система Бронирования", layout="wide", page_icon="🏢")
 
-# --- 2. БОКОВАЯ ПАНЕЛЬ (АВТОРИЗАЦИЯ) ---
+
 st.sidebar.header("🔐 Вход в систему")
 user_email = st.sidebar.text_input("Ваш Email", placeholder="example@mail.ru")
 user_password = st.sidebar.text_input("Пароль", type="password")
