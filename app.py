@@ -2,6 +2,21 @@ import streamlit as st
 import pandas as pd
 from supabase import create_client, Client
 from datetime import datetime
+st.set_page_config(page_title="Система бронирования", layout="wide") # Желательно добавить wide layout
+
+st.markdown("""
+    <style>
+    .stButton>button {
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background-color: #f0f2f6;
+        padding: 20px;
+        border-radius: 15px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # --- 1. НАСТРОЙКИ ПОДКЛЮЧЕНИЯ ---
 # ВСТАВЬ СВОИ ДАННЫЕ ТУТ:
